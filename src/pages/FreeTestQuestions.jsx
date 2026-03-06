@@ -155,7 +155,7 @@ function FreeTestQuestions() {
               }`}
             >
               {currentQ === freeTestQuestions.length - 1
-                ? "Finish Test"
+                ? "Submit"
                 : "Next Question >"}
             </button>
           </div>
