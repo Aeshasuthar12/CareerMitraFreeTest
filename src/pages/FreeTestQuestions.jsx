@@ -89,7 +89,7 @@ function FreeTestQuestions() {
           <div className="flex justify-between items-start">
             <div>
               <h1 className="text-lg font-semibold text-gray-900">
-                Career Interest Snapshot
+                Career Mitra Free Test
               </h1>
 
               <p className="text-sm text-gray-600">
@@ -122,7 +122,7 @@ function FreeTestQuestions() {
           </h2>
 
           {/* Options */}
-          <div className="space-y-3">
+          <div className="space-y-1">
             {scaleOptions.map((opt) => (
               <button
                 key={opt.value}
