@@ -1,7 +1,7 @@
 import { useState } from "react";
 import counsellingImg from "../assets/images/counselling.png";
 import reportImg from "../assets/images/report.jpeg";
-import {useNavigate} from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 function Home() {
   const [openFAQ, setOpenFAQ] = useState(null);
@@ -152,9 +152,10 @@ What You Get:
             </button>
 
             {/* Free Test Button */}
-            <button className="bg-[#f4a63a] text-white px-7 py-3 rounded-lg font-bold "
-            onClick={()=> navigate("/free-test")}>
-
+            <button
+              className="bg-[#f4a63a] text-white px-7 py-3 rounded-lg font-bold "
+              onClick={() => navigate("/free-test-instruction")}
+            >
               Try Our Free Test
             </button>
           </div>
