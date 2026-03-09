@@ -153,10 +153,10 @@ What You Get:
 
             {/* Free Test Button */}
             <button
-              className="bg-[#f4a63a] text-white px-7 py-3 rounded-lg font-bold "
+              className="bg-[#f4a63a] text-white px-7 py-3 rounded-lg font-bold border-2 border-[#f4a63a] hover:bg-transparent hover:text-[#f4a63a] transition"
               onClick={() => navigate("/free-test-instruction")}
             >
-              Try Our Free Test
+              Free Trial Test
             </button>
           </div>
         </div>
