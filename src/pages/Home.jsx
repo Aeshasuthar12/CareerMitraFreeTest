@@ -374,7 +374,7 @@ What You Get:
       {/* TEXT MODAL */}
       {modalText && (
         <div
-          className="fixed inset-0 bg-black/80 flex items-center justify-center z-50 px-4"
+          className="fixed inset-0 bg-black/80 flex items-center justify-center z-50 px-4" 
           onClick={() => setModalText(null)}
         >
           <div
