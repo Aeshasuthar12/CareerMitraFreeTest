@@ -3,6 +3,7 @@ import Home from "./pages/Home";
 import FreeTest from "./pages/FreeTest";
 import FreeTestInstructionPage from "./pages/FreeTestInstructionPage";
 import FreeTestQuestions from "./pages/FreeTestQuestions";
+import Result from "./pages/Result";   
 
 function App() {
   return (
@@ -14,9 +15,14 @@ function App() {
           path="/free-test-instruction"
           element={<FreeTestInstructionPage />}
         />
+        <Route
+          path="/result"
+          element={<Result />}
+        />
         <Route path="/free-test/questions"
          element={<FreeTestQuestions />} />
       </Routes>
+       
     </BrowserRouter>
   );
 }
