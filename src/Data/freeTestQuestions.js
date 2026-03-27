@@ -124,12 +124,6 @@ const freeTestQuestions = [
     cluster: "S",
     question: "I like managing schedules, deadlines, or records.",
   },
-  {
-    id: "G1",
-    cluster: "G",
-    question:
-      "I would like a career where I can grow, be respected, and feel secure.",
-  },
 ];
 
 export default freeTestQuestions;
