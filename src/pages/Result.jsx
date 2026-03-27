@@ -30,7 +30,7 @@ export default function Result() {
           <p className="text-gray-400 text-xs">{state.phonenumber}</p>
 
           <h1 className="text-2xl font-bold mt-3 text-[#157a74]">
-            Your Career Result 🎯
+            Your Career Interest Report
           </h1>
         </div>
 
@@ -102,7 +102,7 @@ export default function Result() {
         {/* 🔥 TOP CLUSTERS */}
         <div className="mt-8">
           <h2 className="font-semibold mb-3 text-gray-800">
-            Top Clusters
+            Your Top Career Clusters
           </h2>
           <div className="flex flex-wrap gap-3">
             {state.top_clusters.map((c, i) => (
@@ -119,7 +119,7 @@ export default function Result() {
         {/* 🔥 CAREERS */}
         <div className="mt-8">
           <h2 className="font-semibold mb-3 text-gray-800">
-            Recommended Careers(It's just a snapshot,for detailed career options, consider taking the full test)
+            Your Recommended Careers (It's just a snapshot, for detailed career options, consider taking the full test)
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {state.careers.map((career, i) => (
