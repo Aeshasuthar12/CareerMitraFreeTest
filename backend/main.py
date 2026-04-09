@@ -32,12 +32,10 @@ Base.metadata.create_all(bind=engine)
 # ---------------- APP ----------------
 app = FastAPI()
 
-
-
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # allow all origins for simplicity
-    allow_credentials=True,  # needed if you send cookies or auth headers
+    allow_origins=["*"],
+    allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
@@ -106,21 +104,26 @@ def get_db():
 @app.post("/submit-test", response_model=StudentResult)
 def submit_test(test: StudentTestCreate, db: Session = Depends(get_db)):
     clusters_result = []
-    cluster_scores = {}
 
     # Calculate scores and bands
     for cluster_name, questions in cluster_questions.items():
         score = sum(int(test.answers.get(q, 0)) for q in questions)
         band = get_band(score)
-        clusters_result.append({"cluster": cluster_name, "score": score, "band": band})
-        cluster_scores[cluster_name] = score
+        clusters_result.append({
+            "cluster": cluster_name,
+            "score": score,
+            "band": band
+        })
 
-    # Sort clusters by score descending
+    # Sort clusters
     sorted_clusters = sorted(clusters_result, key=lambda x: x["score"], reverse=True)
 
-    top_clusters = [sorted_clusters[0]["cluster"], sorted_clusters[1]["cluster"]]
+    top_clusters = [
+        sorted_clusters[0]["cluster"],
+        sorted_clusters[1]["cluster"]
+    ]
 
-    # Map careers
+    # Careers mapping
     careers = []
     for cluster in top_clusters:
         careers.extend(career_map.get(cluster, []))
@@ -138,9 +141,9 @@ def submit_test(test: StudentTestCreate, db: Session = Depends(get_db)):
     db.commit()
     db.refresh(new_test)
 
+    # ✅ FIXED RESPONSE (no extra fields)
     return {
         "clusters": clusters_result,
-        "cluster_scores": cluster_scores,
         "top_clusters": top_clusters,
         "careers": careers,
     }

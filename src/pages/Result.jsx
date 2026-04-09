@@ -50,7 +50,7 @@ export default function Result() {
             {/* BARS */}
             <div className="flex items-end justify-between h-full ml-8 pr-2">
               {state.clusters.map((c, i) => {
-                const percentage = (c.score / 24) * 100;
+                const percentage = (c.score / 20) * 100;
 
                 const getColor = (band) => {
                   if (band === "High") return "bg-[#16a34a]";
