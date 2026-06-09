@@ -182,6 +182,24 @@ function FreeTestQuestions() {
   return (
     <div className="min-h-screen bg-[#f3f4f6] py-10">
       <div className="max-w-3xl mx-auto space-y-6 px-4">
+        {/* Header */}
+        <div className="bg-white rounded-xl shadow-sm p-5">
+          <div className="flex justify-between items-start">
+            <div>
+              <h1 className="text-lg font-semibold text-gray-900">
+                Career Mitra Free Test
+              </h1>
+
+              <p className="text-sm text-gray-600">
+                Select how much you relate to each statement.
+              </p>
+
+              <p className="text-sm text-gray-500">
+                Remember there are NO right or wrong answers here
+              </p>
+            </div>
+
+            {/* Timer */}
         {/* QUESTION CARD */}
         <div className="bg-white rounded-xl shadow-sm p-8">
           <div className="flex justify-between items-start mb-4">
@@ -200,6 +218,8 @@ function FreeTestQuestions() {
             />
           </div>
 
+          {/* Options */}
+          <div className="space-y-1">
           <div className="space-y-3 mt-6">
             {scaleOptions.map((opt) => (
               <button
